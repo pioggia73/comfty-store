@@ -5,7 +5,31 @@ import heroBcg from '../assets/hero-bcg.jpeg'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>
+          design your <br />
+          comfort zone
+        </h1>
+        <p>
+          Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała
+          zawartość strony, kiedy ten chce zobaczyć sam jej wygląd. Jedną z
+          mocnych stron używania Lorem Ipsum jest to, że ma wiele różnych
+          „kombinacji” zdań, słów i akapitów, w przeciwieństwie do zwykłego:
+          „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie”
+          po polsku.
+        </p>
+        <Link to ='/prodicts' className='btn hero-btn'>shop now</Link>
+      </article>
+      <article className='img-container'>
+        <img src={heroBcg} alt='nice table' className='main-img'/>
+        <img src={heroBcg2} alt='person-working' className='accent-img'/>
+
+      </article>
+    </Wrapper>
+  );
+
 }
 
 const Wrapper = styled.section`
