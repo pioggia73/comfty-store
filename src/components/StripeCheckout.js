@@ -13,7 +13,7 @@ import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utils/helpers";
 import { useHistory } from "react-router-dom";
 
-const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const promise = loadStripe("pk_test_5NOC7Ch4ON5b3rEy49qihe1400VYIql7IN");
 
 const CheckoutForm = () => {
   const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
@@ -71,6 +71,16 @@ const CheckoutForm = () => {
             {processing ? <div className="spinner" id="spinner"></div> : "PAY"}
           </span>
         </button>
+        {/* showing an error  */}
+        {error && (
+          <div className="card-error" role="alert">
+            {error}
+          </div>
+        )}
+        {/* show a success message */}
+        <p className={succeeded ? "result-message" : "result-message hidden"}>
+          Payment succeeded, see your result in your
+        </p>
       </form>
     </div>
   );
